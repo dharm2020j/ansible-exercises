@@ -1,0 +1,8 @@
+---
+- name: copy
+  hosts: 192.168.3.128
+  tasks:
+  - name: copy a file/folder
+    copy:
+     src: /etc/ansible/first1.yml
+     dest: /root/

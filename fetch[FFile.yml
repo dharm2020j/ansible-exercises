@@ -1,0 +1,12 @@
+---
+- name: copy
+  hosts: 192.168.3.128
+  tasks:
+  - name: copy a file/folder
+    fetch:
+     src: /root/first1.yml
+     dest: /root/dharm/
+     owner: dharm
+     group: jangra
+     mode: 0777
+     backup: true

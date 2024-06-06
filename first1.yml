@@ -1,0 +1,13 @@
+---
+- name: task2
+  hosts: 192.168.3.128
+  tasks:
+  - name: install-nginx
+    yum:
+      name: nginx
+      state: present
+  - name: start service 
+    service:
+      name: nginx
+      state: started
+      enabled: true

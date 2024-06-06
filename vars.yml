@@ -1,0 +1,17 @@
+---
+- name: Desciption
+  hosts: 192.168.3.129 
+  vars:
+  - app: chrony
+  - services: chronyd
+
+  tasks:
+  - name: install package
+    yum:
+      name: "{{ app }}"
+      state: present 
+  - name: Start the service
+    service:
+      name: "{{ services }}"
+      state: started
+      enabled: true

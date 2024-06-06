@@ -1,0 +1,15 @@
+---
+- name: firewalld-service-add
+  hosts: myhosts 
+  tasks:
+  - name: Add service in firewaald
+    firewalld:
+      service: http 
+      state: enabled
+      permanent: yes 
+  - name: reload
+    service:
+      name: firewalld
+      state: reloaded
+      
+      

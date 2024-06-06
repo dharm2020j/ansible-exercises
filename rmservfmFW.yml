@@ -1,0 +1,15 @@
+---
+- name: firewalld-service
+  hosts: myhosts 
+  tasks:
+  - name: Remove service in firewaald
+    firewalld:
+      service: http 
+      state: disabled
+      permanent: yes 
+  - name: reload
+    service:
+      name: firewalld
+      state: reloaded
+      
+      

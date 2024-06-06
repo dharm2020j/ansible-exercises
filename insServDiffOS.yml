@@ -1,0 +1,17 @@
+---
+- name: remote installation
+  hosts: 192.168.3.128
+  tasks:
+  - name: install-http in centOS
+    when: ansible_os_family == "RedHat"
+    yum:
+      name: httpd
+      state: present
+
+
+  - name: install htpd in ubuntu
+    when: ansible_os_family == "Ubuntu"
+    apt:
+      name: apache2
+      state: present
+      

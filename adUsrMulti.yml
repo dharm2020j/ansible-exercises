@@ -1,0 +1,16 @@
+---
+- name: Description
+  hosts: all
+  tasks:
+  - name: create multiple users
+    user:
+     name: "{{ item }}"
+     state: present 
+     password: "{{ 'password123'|password_hash('sha512') }}"
+     update_password: always
+    loop:
+    - sandeep
+    - dharmender
+    - sanjeet
+    - anand
+

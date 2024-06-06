@@ -1,0 +1,16 @@
+---
+- name: firewall service
+  hosts: 192.168.3.128 
+  
+  tasks:
+  - name: handler with notify
+    firewalld:
+      port: 80/tcp
+      state: enabled 
+      permanent: true
+    notify: Reload the firewalld service
+  handlers: 
+  - name: Reload the firewalld service
+    service:
+      name: firewalld
+      state: reload

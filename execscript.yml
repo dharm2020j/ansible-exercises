@@ -1,0 +1,10 @@
+---
+- name: exec
+  hosts: myhosts 
+  tasks:
+  - name: executing script
+    shell: ./multiplefile.sh >> output.log
+    args:
+      chdir: /root/
+      creates: output.log
+   

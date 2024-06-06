@@ -1,0 +1,23 @@
+---
+- name: firewalld-service
+  hosts: myhosts 
+  tasks:
+  - name: Remove service in firewaald
+    firewalld:
+     port: "{{ item }}"
+     state: enabled
+     permanent: yes 
+    loop:
+    - 80/tcp
+    - 21/tcp
+  - name: add service http
+    firewalld:
+     service: http
+     state: enabled
+     permanent: true
+  - name: reload
+    service:
+     name: firewalld
+     state: reloaded
+      
+      

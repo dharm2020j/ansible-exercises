@@ -1,0 +1,12 @@
+---
+- name: file
+  hosts: 192.168.3.128
+  tasks:
+  - name: create a file/folder
+    file:
+     path: /root/dharm/{{item}}
+     state: touch      
+     mode: 0775
+    loop:
+    - f1.txt
+    - f2.txt

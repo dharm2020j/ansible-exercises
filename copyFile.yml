@@ -1,0 +1,12 @@
+---
+- name: copy
+  hosts: 192.168.3.128
+  tasks:
+  - name: copy a file/folder
+    copy:
+     src: /root/scripts-dharm/multiplefile.sh
+     dest: /root/
+     owner: dharm
+     group: jangra
+     mode: 0777
+     backup: true

@@ -1,0 +1,9 @@
+---
+- name: User-Creation
+  hosts: 192.168.3.128
+  tasks:
+  - name: delete User 
+    user:
+     name: ansible-user
+     state: absent
+     remove: yes

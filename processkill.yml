@@ -1,0 +1,6 @@
+---
+- name: process
+  hosts: myhosts 
+  tasks:
+  - name: process kill
+    shell: pgrep nginx | xargs kill -9   
